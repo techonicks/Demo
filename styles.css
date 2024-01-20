@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(240,235,248);
+}
+
+div#box {
+    width: min(90%, 625px);
+    margin: auto;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+div.card {
+    width: 100%;
+    border: 1px solid rgb(192,192,192);
+    border-radius: 10px;
+    background-color: rgb(192,192,192);
+}
+
+div.card#cinfo {
+    border-top: 10px solid rgb(103,58,183);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+}
+
+div.sub-part {
+    width: 100%;
+    background-color: white;
+}
+
+div.sub-part>* {
+    padding: 18px;
+}
+
+div#info-head h1 {
+    font-weight: normal;
+}
+
+div#info-mail {
+    color: rgb(92,92,92);
+    font-size: 0.9rem;
+}
+
+div#info-mail #im-cloud {
+    height: 1.25em;
+    top: 0;
+    right: 0;
+    float: right;
+}
+
+div#info-mail #p1 {
+    margin-bottom: 0.5em;
+}
+
+#im-switch {
+    color: rgb(32, 137, 236);
+    text-decoration: none;
+}
+
+div#info-mail #p2 {
+    display: flex;
+    align-items: center;
+}
+
+#im-mailx {
+    height: 1em;
+    margin-right: 1em;
+}
+
+div#info-reqq {
+    color: rgb(220, 0, 0);
+    font-size: 0.9rem;
+    border-radius: 0 0 10px 10px;
+}
