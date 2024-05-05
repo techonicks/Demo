@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verification</title>
+<style>
+    .verify-yes, .verify-no {
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <form>
+        <label for="cert">Certificate ID: </label><input type="text" name="cert" id="cert" placeholder="Enter Certificate ID">
+        <button type="submit">Submit</button>
+    </form>
+    <div class="verify-yes" id="verify-yes">
+        <p id="cert-details">Certificate verified.<br>Issued to "<span id="cert-name"></span>" on <span id="cert-date"></span>. (<a id="cert-link" href="" target="_blank">View in new window</a>)</p>
+        <iframe id="cert-view" src="" width="640" height="480" allow="autoplay"></iframe>
+    </div>
+    <div class="verify-no" ID="verify-no">
+        <p>No certificate has been issued by the Certificate ID "<span id="cert-id"></span>".</p>
+    </div>
+<script>
+    function alphanumeric(str) { 
+        return str.replace(/[^a-zA-Z0-9]/g, ''); 
+    }
+
+    const certLinks = {
+        "24TONEWA003": ["1nIfP7SyzKDpG7LQ97QCLZhPLKGUaKIU2", "Samrat Mondal", "14th March 2024"],
+        "24TONCDA003": ["1xw5u3M4zQlSdzylGpATzR-rmf5glAZ-x", "Samrat Mondal", "14th March 2024"]
+    }
+    id = new URLSearchParams(window.location.search).get('cert')
+    if (id) {
+        id = alphanumeric(id.toUpperCase())
+        if (certLinks[id]) {
+            document.getElementById("cert-name").innerHTML = certLinks[id][1];
+            document.getElementById("cert-date").innerHTML = certLinks[id][2];
+            document.getElementById("cert-link").href = "https://drive.google.com/file/d/" + certLinks[id][0] + "/view";
+            document.getElementById("cert-view").src = "https://drive.google.com/file/d/" + certLinks[id][0] + "/preview";
+            document.getElementById("verify-yes").style.display = "block";
+        } else {
+            document.getElementById("cert-id").innerHTML = id;
+            document.getElementById("verify-no").style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
