@@ -15,7 +15,7 @@ if (id) {
         document.getElementById("cert-date").innerHTML = certLinks[id][2];
         document.getElementById("cert-link").href = "https://drive.google.com/file/d/" + certLinks[id][0] + "/view";
         document.getElementById("cert-view").src = "https://drive.google.com/file/d/" + certLinks[id][0] + "/preview";
-        document.getElementById("cert-down").src = "https://drive.usercontent.google.com/u/0/uc?id=" + certLinks[id][0] + "&export=download";
+        document.getElementById("cert-down").href = "https://drive.usercontent.google.com/u/0/uc?id=" + certLinks[id][0] + "&export=download";
         document.getElementById("verify-yes").style.display = "block";
     } else {
         document.getElementById("cert-id").innerHTML = id;
