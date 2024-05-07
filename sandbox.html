@@ -22,30 +22,7 @@
     <div class="verify-no" ID="verify-no">
         <p>No certificate has been issued by the Certificate ID "<span id="cert-id"></span>".</p>
     </div>
-<script>
-    function alphanumeric(str) { 
-        return str.replace(/[^a-zA-Z0-9]/g, ''); 
-    }
-
-    const certLinks = {
-        "24TONEWA003": ["1nIfP7SyzKDpG7LQ97QCLZhPLKGUaKIU2", "Samrat Mondal", "14th March 2024"],
-        "24TONCDA003": ["1xw5u3M4zQlSdzylGpATzR-rmf5glAZ-x", "Samrat Mondal", "14th March 2024"]
-    }
-    id = new URLSearchParams(window.location.search).get('cert')
-    if (id) {
-        id = alphanumeric(id.toUpperCase())
-        if (certLinks[id]) {
-            document.getElementById("cert-name").innerHTML = certLinks[id][1];
-            document.getElementById("cert-date").innerHTML = certLinks[id][2];
-            document.getElementById("cert-link").href = "https://drive.google.com/file/d/" + certLinks[id][0] + "/view";
-            document.getElementById("cert-view").src = "https://drive.google.com/file/d/" + certLinks[id][0] + "/preview";
-            document.getElementById("verify-yes").style.display = "block";
-        } else {
-            document.getElementById("cert-id").innerHTML = id;
-            document.getElementById("verify-no").style.display = "block";
-        }
-    }
-</script>
-
+    <script type="text/javascript" src="certObject.js"></script>
+    <script type="text/javascript" src="certificate.js"></script>
 </body>
 </html>
